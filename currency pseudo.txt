@@ -1,0 +1,151 @@
+-allows the travel agent to enter the amount in pounds sterling (GBP) that the customer wishes to convert
+
+-allows the travel agent to choose the currency requested by the customer
+
+-converts the amount entered in GBP to the chosen currency
+
+-calculates a transaction fee depending on how much in GBP the customer converts
+
+-calculates the total cost (amount to convert plus transaction fee) in GBP of converting to the chosen currency
+
+-applies a discount of 5% to the total cost if the customer is also a member of staff.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+WHILE customer_pounds_C < 1 THEN
+    customer_pounds = INPUT("How many pounds does the customer want to exchange (2500 is the max)? ")
+    IF customer_pounds <= 2500 THEN
+        customer_pounds_C == 2
+    ELSE 
+        PRINT ("You have entered a higher amount that 2500, try enter a number lower")
+    ENDIF
+ENDWHILE
+
+WHILE customer_convertion < 1 THEN
+    Convertion = INPUT("What currency does the customer want to convert to? (American Dollars(USD), Euros(EUR), Brazilian real(BRL), Japanese Yen(JPY) or Turkish Lira(TRY)) ")
+    IF Convertion == "USD" THEN
+        customer_converted = customer_pounds * 1.40
+        IF customer_pounds =< 300 THEN
+            customer_fee = customer_converted * 3.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 300 AND customer_pounds =< 750 THEN
+            customer_fee = customer_converted * 3
+            customer_convertion == 2
+        ELSE IF customer_pounds > 750 AND customer_pounds =< 1000 THEN
+            customer_fee = customer_converted * 2.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 1000 AND customer_pounds =< 2000 THEN
+            customer_fee = customer_converted * 2
+            customer_convertion == 2
+        ELSE IF customer_pounds > 2000 AND customer_pounds =< 2500 THEN
+            customer_fee = customer_converted * 1.5
+            customer_convertion == 2
+        ELSE THEN
+            PRINT("There has been an error ")
+        ENDIF
+
+    ELSE IF Convertion == "EUR" THEN
+        customer_converted = customer_pounds * 1.14
+        IF customer_pounds =< 300 THEN
+            customer_fee = customer_converted * 3.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 300 AND customer_pounds =< 750 THEN
+            customer_fee = customer_converted * 3
+            customer_convertion == 2
+        ELSE IF customer_pounds > 750 AND customer_pounds =< 1000 THEN
+            customer_fee = customer_converted * 2.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 1000 AND customer_pounds =< 2000 THEN
+            customer_fee = customer_converted * 2
+            customer_convertion == 2
+        ELSE IF customer_pounds > 2000 AND customer_pounds =< 2500 THEN
+            customer_fee = customer_converted * 1.5
+            customer_convertion == 2
+        ELSE THEN
+            PRINT("There has been an error ")
+        ENDIF
+
+    ELSE IF Convertion == "BRL" THEN
+        customer_converted = customer_pounds * 4.77
+        IF customer_pounds =< 300 THEN
+            customer_fee = customer_converted * 3.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 300 AND customer_pounds =< 750 THEN
+            customer_fee = customer_converted * 3
+            customer_convertion == 2
+        ELSE IF customer_pounds > 750 AND customer_pounds =< 1000 THEN
+            customer_fee = customer_converted * 2.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 1000 AND customer_pounds =< 2000 THEN
+            customer_fee = customer_converted * 2
+            customer_convertion == 2
+        ELSE IF customer_pounds > 2000 AND customer_pounds =< 2500 THEN
+            customer_fee = customer_converted * 1.5
+            customer_convertion == 2
+        ELSE THEN
+            PRINT("There has been an error ")
+        ENDIF
+
+    ELSE IF Convertion == "JPY" THEN
+        customer_converted = customer_pounds * 151.05
+        IF customer_pounds =< 300 THEN
+            customer_fee = customer_converted * 3.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 300 AND customer_pounds =< 750 THEN
+            customer_fee = customer_converted * 3
+            customer_convertion == 2
+        ELSE IF customer_pounds > 750 AND customer_pounds =< 1000 THEN
+            customer_fee = customer_converted * 2.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 1000 AND customer_pounds =< 2000 THEN
+            customer_fee = customer_converted * 2
+            customer_convertion == 2
+        ELSE IF customer_pounds > 2000 AND customer_pounds =< 2500 THEN
+            customer_fee = customer_converted * 1.5
+            customer_convertion == 2
+        ELSE THEN
+            PRINT("There has been an error ")
+        ENDIF
+
+    ELSE IF Convertion == "TRY" THEN
+        customer_converted = customer_pounds * 5.68
+        IF customer_pounds =< 300 THEN
+            customer_fee = customer_converted * 3.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 300 AND customer_pounds =< 750 THEN
+            customer_fee = customer_converted * 3
+            customer_convertion == 2
+        ELSE IF customer_pounds > 750 AND customer_pounds =< 1000 THEN
+            customer_fee = customer_converted * 2.5
+            customer_convertion == 2
+        ELSE IF customer_pounds > 1000 AND customer_pounds =< 2000 THEN
+            customer_fee = customer_converted * 2
+            customer_convertion == 2
+        ELSE IF customer_pounds > 2000 AND customer_pounds =< 2500 THEN
+            customer_fee = customer_converted * 1.5
+            customer_convertion == 2
+        ELSE THEN
+            PRINT("There has been an error ")
+        ENDIF
+    ENDIF
+ENDWHILE
+
+WHILE customer_check < 1 THEN
+    customer = INPUT("Is the customer a member? ")
+    IF customer == "yes" OR "YES" THEN
+        customer_total = customer_fee / 5
+        PRINT("Your total is "customer_total)
+        customer_check == 2
+    ELSE IF customer == "no" OR "NO" THEN
+        PRINT("Your total is "customer_fee)
+        customer_check == 2
+    ELSE
+        PRINT("You have entered a invalid answer")
+    ENDIF
+ENDWHILE
+
+
+
+
+
+        
